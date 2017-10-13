@@ -1,6 +1,23 @@
-[gd_scene format=1]
+[gd_scene load_steps=2 format=1]
+
+[sub_resource type="GDScript" id=1]
+
+script/source = "extends Node
+
+# class member variables go here, for example:
+# var a = 2
+# var b = \"textvar\"
+
+func _ready():
+	# Called every time the node is added to the scene.
+	# Initialization here
+	get_node(\"/root/main\")._startup(get_node(\"Game\"))
+	pass
+"
 
 [node name="Main" type="Node"]
+
+script/script = SubResource( 1 )
 
 [node name="Game" type="Node2D" parent="."]
 
